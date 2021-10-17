@@ -1,17 +1,17 @@
-import { CartWidget } from './Components/CartWidget'
+import { CartWidget } from './CartWidget'
 
 const NavBar = () => {
     return(
         <>
             <div className="ContenedorLista">
-                <img src="assets/logo1.png" alt="Logo Idraet Lidherma" />
+                <a href="#Nosotrs"> <img src="assets/logo1.png" alt="Logo Idraet Lidherma" /> </a>
 
                 <ul className="Lista">
                     <li className="Items"><a href='#Nosotros'>Nosotros</a></li>
                     <li className="Items"><a href='#Productos'>Productos</a></li>
                     <li className="Items"><a href='#Contacto'>Contacto</a></li>
                 </ul>
-                <CartWidget />
+                <CartWidget className="cart-widget" />
             </div>
         </>
     )

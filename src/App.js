@@ -1,14 +1,15 @@
 import './App.css';
 import './Components/style.scss';
 import NavBar from './Components/NavBar';
-import { CartWidget } from '.Components/CartWidget';
+import { ItemListContainer } from './Components/ItemListContainer';
+
 
 function App() {
   return (
     <>
       <div>
           <NavBar />
-          <CartWidget />
+          <ItemListContainer/>
       </div>
     </>
   );

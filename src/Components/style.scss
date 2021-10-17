@@ -1,3 +1,5 @@
+$fuente: 'Poppins', sans-serif;
+
 *{
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -6,14 +8,22 @@
 }
 /* NAV BAR PRINCIPAL */
 .ContenedorLista{
-    background-color: lightseagreen;
+    background-color: #3AC9B9;
     padding: .5rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
+
     
-    img{
-        width: 6%;
+    a{
+        color: white;
+        svg{
+            width: 30px;
+            height: 30px;
+        }
+        img{
+            width: 15%;
+        }
     }
     .Lista{
         display: flex;
@@ -40,5 +50,11 @@
     .Lista:hover{
         color: red;
     }
+    
 }
 
+.container{
+    text-align: center;
+    font-weight: 300;
+    margin-top: 2rem;
+}

@@ -1,9 +1,11 @@
-
-import ShopCart from 'assets/ShopCart'
+import { AiOutlineShoppingCart } from "react-icons/ai";
 
 export const CartWidget = () => {
     return (
-        
-        <ShopCart />
+        <>
+            <a href="#Carrito">
+                <AiOutlineShoppingCart/>
+            </a>
+        </>
     )
 }
