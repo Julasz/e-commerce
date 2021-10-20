@@ -1,7 +1,10 @@
 import './App.css';
-import './Components/style.scss';
-import NavBar from './Components/NavBar';
-import { ItemListContainer } from './Components/ItemListContainer';
+import './Components/navbar/navbar.scss'
+import './Components/items/items.scss'
+import './Components/items/itemCount.scss'
+import NavBar from './Components/navbar/NavBar';
+import { ItemListContainer } from './Components/items/ItemListContainer';
+import { ItemCount } from './Components/items/ItemCount';
 
 
 function App() {
@@ -10,6 +13,8 @@ function App() {
       <div>
           <NavBar />
           <ItemListContainer/>
+          <ItemCount/>
+
       </div>
     </>
   );

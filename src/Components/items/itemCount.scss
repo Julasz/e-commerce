@@ -1,0 +1,62 @@
+$fuente: 'Poppins', sans-serif;
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+
+.container1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    
+
+    .card{
+        padding: 1rem;
+        border: 1px solid lightgray;
+        background-color: rgb(245, 245, 245);
+        .card_title{
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+        .card_title, .card_text{
+            margin: 1rem;
+        }
+        .card_text{
+            font-weight: 300;
+        }
+        .item-count{
+            margin: 1rem;
+            padding: .3rem;
+            display: flex;
+            justify-content: center;
+
+            h3{
+                font-size: 1.2rem;
+                padding: .5rem;
+                font-weight: 300;
+                margin: 0 2rem;
+            }
+            button{
+                margin: .2rem;
+                padding: .2rem .5rem;
+                border-radius: 5px;
+                background-color: pink;
+                border-color: pink;
+            }
+        }
+    
+        .btn-add-carrito{
+            font-size: 1rem;
+            font-weight: 300;
+            padding: .5rem 3rem;
+            background-color: white;
+            border-color: white;
+            box-shadow: 0 0 4px 1px lightgray;
+        }
+    }
+    
+}

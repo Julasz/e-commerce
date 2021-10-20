@@ -16,11 +16,6 @@ $fuente: 'Poppins', sans-serif;
 
     
     a{
-        color: white;
-        svg{
-            width: 30px;
-            height: 30px;
-        }
         img{
             width: 15%;
         }
@@ -49,6 +44,12 @@ $fuente: 'Poppins', sans-serif;
     }
     .Lista:hover{
         color: red;
+    }
+
+    svg{
+        color: white;
+        width: 25px;
+        height: 25px;
     }
     
 }
