@@ -4,7 +4,7 @@ export const ItemListContainer = ({greeting}) => {
     return(
         <>
             <h2>{greeting}</h2>
-            <ItemCount/>
+            <ItemCount stock={10} initial={0}/>
         </>
     )
 }

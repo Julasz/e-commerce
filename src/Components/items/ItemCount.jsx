@@ -2,13 +2,13 @@
 import React, {useState} from 'react'
 import { Card, Button } from "react-bootstrap"
 
-export const ItemCount = () => {
+export const ItemCount = ({stock, initial, onAdd}) => {
 
-    const [contador, setContador] = useState(0)
+    const [contador, setContador] = useState(initial)
     
    
-    const SumarContador = () => contador < 10 ? setContador(contador + 1) : console.log(`Tenemos de stock solo 10 unidades`);
-    const RestarContador = () => contador > 1 ? setContador(contador - 1) : console.log(`Se puede comprar desde 1 unidad`);
+    const SumarContador = () => contador < stock ? setContador(contador + 1) : console.log(`Tenemos de stock solo ${stock} unidades`);
+    const RestarContador = () => contador > initial ? setContador(contador - 1) : console.log(`Se puede comprar desde 1 unidad`);
 
     const AgregarContador = () => contador === 0 ? console.log(`Se desactiva`) : console.log(`Has comprado ${contador} productos`);
 
