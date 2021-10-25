@@ -4,7 +4,7 @@ import './Components/items/items.scss'
 import './Components/items/itemCount.scss'
 import NavBar from './Components/navbar/NavBar';
 import { ItemListContainer } from './Components/items/ItemListContainer';
-import { ItemCount } from './Components/items/ItemCount';
+
 
 
 function App() {
@@ -12,8 +12,8 @@ function App() {
     <>
       <div>
           <NavBar />
-          <ItemListContainer/>
-          <ItemCount/>
+          <ItemListContainer greeting="Bienvenidos a la tienda on-line de productos de salud y belleza de idraet y lidherma"/>
+          
 
       </div>
     </>

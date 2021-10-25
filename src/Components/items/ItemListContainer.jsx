@@ -1,11 +1,10 @@
+import { ItemCount } from "./ItemCount"
 
-export const ItemListContainer = () => {
-
-
+export const ItemListContainer = ({greeting}) => {
     return(
         <>
-            <h2>Bienvenidos a la tienda on-line de productos de salud y belleza de idraet y lidherma</h2>
-           
+            <h2>{greeting}</h2>
+            <ItemCount/>
         </>
     )
 }

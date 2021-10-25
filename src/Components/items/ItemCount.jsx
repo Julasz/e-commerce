@@ -4,24 +4,14 @@ import { Card, Button } from "react-bootstrap"
 
 export const ItemCount = () => {
 
-    const [carrito, setCarrito] = useState(0)
-  
-    const SumarCarrito = () => {
-      if(carrito < 10){
-        setCarrito(carrito + 1)
-      }
-    };
+    const [contador, setContador] = useState(0)
+    
+   
+    const SumarContador = () => contador < 10 ? setContador(contador + 1) : console.log(`Tenemos de stock solo 10 unidades`);
+    const RestarContador = () => contador > 1 ? setContador(contador - 1) : console.log(`Se puede comprar desde 1 unidad`);
 
-    const RestarCarrito = () => {
-        if (carrito > 1) {
-            setCarrito(carrito - 1)
-        }
-        
-    }
+    const AgregarContador = () => contador === 0 ? console.log(`Se desactiva`) : console.log(`Has comprado ${contador} productos`);
 
-    const AgregarCarrito = () => {
-        console.log(`Has comprado ${carrito} productos`);
-    }
     return (
         <>
             <section className='container1'>
@@ -32,13 +22,13 @@ export const ItemCount = () => {
                             <Card.Body>
                                 <Card.Title className='card_title'>Skin Mask</Card.Title>
                                 <Card.Text className='card_text'>Texto descriptivo</Card.Text>
-
+                                <Button>Ver detalles</Button>
                                 <div className='item-count'>
-                                    <Button onClick={RestarCarrito}>-</Button>
-                                    <h3>{carrito}</h3>
-                                    <Button onClick={SumarCarrito}>+</Button>
+                                    <Button onClick={RestarContador}>-</Button>
+                                    <h3>{contador}</h3>
+                                    <Button onClick={SumarContador}>+</Button>
                                 </div>
-                                <Button className='btn-add-carrito' onClick={AgregarCarrito}>Agregar al carrito</Button>
+                                <Button className='btn-add-contador' onClick={AgregarContador}>Agregar al carrito</Button>
                                
 
                             </Card.Body>
