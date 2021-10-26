@@ -18,7 +18,7 @@ export const ItemCount = ({stock, initial, onAdd}) => {
                 <div className='row'>
                     
                         <Card className='card'>
-                            <Card.Img variant="top" src="holder.js/100px180" alt="foto de skin mask"/>
+                            <Card.Img variant="top" src="assets/lidherma/skinMask.jpeg" alt="foto de skin mask"/>
                             <Card.Body>
                                 <Card.Title className='card_title'>Skin Mask</Card.Title>
                                 <Card.Text className='card_text'>Texto descriptivo</Card.Text>

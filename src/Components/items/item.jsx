@@ -1,6 +1,7 @@
 import React from 'react'
 
-export const Item = ({detalles}) => {
+export const Item = () => {
+
     return (
         <>
             

@@ -1,6 +1,6 @@
 import './App.css';
 import './Components/navbar/navbar.scss'
-import './Components/items/items.scss'
+import './Components/items/item.scss'
 import './Components/items/itemCount.scss'
 import NavBar from './Components/navbar/NavBar';
 import { ItemListContainer } from './Components/items/ItemListContainer';
