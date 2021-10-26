@@ -1,11 +1,11 @@
 import React, {useEffect, useState} from 'react'
-
+import { Item } from './Item'
 
 const productos = [
-    {id: 1, title:"Skin Mask", price: 150, pictureUrl: 'data:image/jpeg;base64,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'},
-    {id: 2, title:"Delineador", price: 470, pictureUrl: 'assets/lidherma/skinMask.jpeg'},
-    {id: 3, title:"Bronceador B2", price: 200, pictureUrl: 'assets/lidherma/skinMask.jpeg'},
-    {id: 4, title:"Purificador", price: 340, pictureUrl: 'assets/lidherma/skinMask.jpeg'}
+    {id: 1, title:"Skin Mask", price: 150, pictureUrl: 'assets/lidherma/skinMask.jpeg'},
+    {id: 2, title:"Delineador", price: 470, pictureUrl: 'assets/lidherma/delineador.jpeg'},
+    {id: 3, title:"Bronceador B2", price: 200, pictureUrl: 'assets/lidherma/bronceador.jpeg'},
+    {id: 4, title:"Purificador", price: 340, pictureUrl: 'assets/lidherma/hydrapore.jpeg'}
 ]
 //renderPantalla para llamar a la API (el array de productos
 const renderPantalla = new Promise ((resolve, reject) => {
@@ -16,46 +16,28 @@ const renderPantalla = new Promise ((resolve, reject) => {
 
 })
 
-
 export const ItemList = () => {
     
-    const [product, setProduct] = useState([]) //forzando que sea un array , empieza vacío
+    const [product, setProduct] = useState([])
 
     useEffect(() => {
         renderPantalla
-        .then(res =>{ //para dar acciones a la arrow funtion
+        .then(res =>{
             /* parsear las apis */
             //return data - devuelve la respuesta => para llamar a la API resp.json()
             setProduct(res)
-        })// metodo asincronico para capturar las respuestas posibles. Se guarda lo de RENDERPANTALLA
-        .catch( error => console.log(error)) /*capturar TODOS los errores posibles de las promises*/
-        .finally(() => console.log('Finalizó')) //x último => se ejecuta si o si, se puede setear el loading como false
+        })
+        .catch( error => console.log(error))
+        .finally(() => console.log('Finalizó'))
 
     },[])
     
     console.log(product)
     return (
         <>
-        { //key=ayuda a seleccionar el item
-
-             product.map( (prod, id) => <div key={prod.id} className="container1">
-                                            <div className="card">
-                                                <div className="card_title">
-                                                    {prod.title}
-                                                </div>
-                                                <div className="card_text">
-                                                    <img src="{prod.pictureUrl}" alt="Foto" />
-                                                    <br />
-                                                    {prod.price}
-                                                </div>
-                                                <div className="btn-add-contador">
-                                                    <button className="btn">
-                                                    Ver detalles
-                                                    </button>
-                                                </div>
-                                            </div>
-                                       </div> )
-        }
+            {
+                product.map( (prod) => <Item key={prod.id} title={prod.title} price={prod.price} pictureUrl={prod.pictureUrl} />)
+            }
         </>
     )
 }

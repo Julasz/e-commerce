@@ -1,6 +1,6 @@
 
 import React, {useState} from 'react'
-import { Card, Button } from "react-bootstrap"
+import {Button } from "react-bootstrap"
 
 export const ItemCount = ({stock, initial, onAdd}) => {
 
@@ -14,31 +14,13 @@ export const ItemCount = ({stock, initial, onAdd}) => {
 
     return (
         <>
-            <section className='container1'>
-                <div className='row'>
-                    
-                        <Card className='card'>
-                            <Card.Img variant="top" src="assets/lidherma/skinMask.jpeg" alt="foto de skin mask"/>
-                            <Card.Body>
-                                <Card.Title className='card_title'>Skin Mask</Card.Title>
-                                <Card.Text className='card_text'>Texto descriptivo</Card.Text>
-                                <Button>Ver detalles</Button>
-                                <div className='item-count'>
-                                    <Button onClick={RestarContador}>-</Button>
-                                    <h3>{contador}</h3>
-                                    <Button onClick={SumarContador}>+</Button>
-                                </div>
-                                <Button className='btn-add-contador' onClick={AgregarContador}>Agregar al carrito</Button>
-                               
-
-                            </Card.Body>
-                        </Card>
-                    
-                   
-
-                </div>
-
-            </section>
+            
+            <div className='item-count'>
+                <Button onClick={RestarContador}>-</Button>
+                <h3>{contador}</h3>
+                <Button onClick={SumarContador}>+</Button>
+                <Button className='btn-add-contador' onClick={AgregarContador}>Agregar al carrito</Button>
+            </div>
         </>
     )
 }
