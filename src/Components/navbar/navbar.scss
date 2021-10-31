@@ -41,6 +41,10 @@ $fuente: 'Poppins', sans-serif;
             color: white;
             letter-spacing: 3px;
         }
+        a:hover{
+            font-weight: 600;
+            font-size: 1.3rem;
+        }
     }
     .Lista:hover{
         color: red;
@@ -51,7 +55,6 @@ $fuente: 'Poppins', sans-serif;
         width: 25px;
         height: 25px;
     }
-    
 }
 
 .container{

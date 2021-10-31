@@ -1,10 +1,10 @@
 
 import { ItemList } from "./ItemList"
 
-export const ItemListContainer = ({greeting}) => {
+export const ItemListContainer = () => {
     return(
         <>
-            <h2>{greeting}</h2>
+            
             <ItemList/>
             
         </>
