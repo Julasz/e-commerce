@@ -4,7 +4,7 @@ import { RenderUnProducto } from '../items/Stock'
 import { useParams } from 'react-router'
 
 export const ItemDetailsContainer = () => {
-    const [producto, setProducto] = useState([])
+    const [product, setProduct] = useState([])
     const [loading, setLoading] = useState(true)
 
     const {productId} = useParams()
@@ -13,7 +13,7 @@ export const ItemDetailsContainer = () => {
 
         RenderUnProducto
         .then(res =>{
-            setProducto(res.find(prod => prod.categoria === productId))
+            setProduct(res.find(prod => prod.categoria === productId))
         })
         .catch( error => alert(`Error: ${error}`))
         .finally(() => setLoading(false))
@@ -25,7 +25,7 @@ export const ItemDetailsContainer = () => {
         <>
             
             {   loading ? <h2>Cargado..</h2> :
-                <ItemDetail producto={producto}/> 
+                <ItemDetail producto={product}/> 
             }
         </>
     )
