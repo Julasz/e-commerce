@@ -1,7 +1,6 @@
 import React from 'react'
-import {ItemCount} from '../../../src/Components/items/ItemCount'
-
-
+import {ItemCount} from '../items/ItemCount'
+ 
 export const ItemDetail = ({product}) => {
     return (
         <>

@@ -13,7 +13,7 @@ export const ItemDetailsContainer = () => {
 
         RenderUnProducto
         .then(res =>{
-            setProduct(res.find(prod => prod.categoria === productId))
+            setProduct(res.find(prod => prod.id === productId))
         })
         .catch( error => alert(`Error: ${error}`))
         .finally(() => setLoading(false))

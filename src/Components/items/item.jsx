@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 
 export const Item = ({prod}) => {
 
+    console.log({prod})
     return (
             <div className="container1">
                 <section className='container1'>
@@ -19,5 +20,8 @@ export const Item = ({prod}) => {
                     </div>
                 </section>
             </div>
+
     )
+
 }
+
