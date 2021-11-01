@@ -9,7 +9,7 @@ export const CartWidget = () => {
 
         <>
            
-            <Link to='/carrito'><AiOutlineShoppingCart/></Link>
+            <Link to='/cart'><AiOutlineShoppingCart/></Link>
             
         </>
     )

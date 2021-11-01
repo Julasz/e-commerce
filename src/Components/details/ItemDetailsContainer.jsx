@@ -1,44 +1,32 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import {renderPantalla} from '../items/Stock'
-import { ItemCount } from '../items/ItemCount'
+import {useEffect, useState} from 'react'
 import { ItemDetail } from './ItemDetail'
-import { Card } from 'react-bootstrap'
+import { RenderUnProducto } from '../items/Stock'
+import { useParams } from 'react-router'
 
+export const ItemDetailsContainer = () => {
+    const [producto, setProducto] = useState([])
+    const [loading, setLoading] = useState(true)
 
-// const getItem = new Promise ((resolve, reject) => {
-//     setTimeout(() =>{
-//         resolve(ItemDetail)
-//     }, 2000)
-// })
+    const {productId} = useParams()
 
-export const ItemDetailsContainer = ({productos}) => {
+    useEffect(() => {
 
+        RenderUnProducto
+        .then(res =>{
+            setProducto(res.find(prod => prod.categoria === productId))
+        })
+        .catch( error => alert(`Error: ${error}`))
+        .finally(() => setLoading(false))
+        
+    },[productId])
+    console.log(productId)
+    
     return (
         <>
-            {/* <div key={productos.id} className='container1'>
-                <section className='container1'>
-                    <div className='row'>
-                        <Card className='card'>
-                            <Card.Img variant='top' src={productos.pictureUrl} alt='foto'/>
-                            <Card.Body>
-                                <Card.Title className='card_title'>{productos.title}</Card.Title>
-                                <Card.Text className='card_text'>{ItemDetail}</Card.Text>
-                                <Card.Text className='card_text'>{productos.price}</Card.Text>
-                                <ItemCount stock={productos.stock} initial={0}/>
-                            </Card.Body>
-                            <Card.Footer>
-                            <Link to='/carrito'>
-                                <button>Agregar al carrito</button>
-                            </Link>
-                            <Link to='/'>
-                                <button>Volver</button>
-                            </Link>
-                            </Card.Footer>
-                        </Card>
-                    </div>
-                </section>
-            </div> */}
+            
+            {   loading ? <h2>Cargado..</h2> :
+                <ItemDetail producto={producto}/> 
+            }
         </>
     )
 }

@@ -1,4 +1,5 @@
 $fuente: 'Poppins', sans-serif;
+$colorPrincipal: rgb(103, 204, 170);
 
 *{
     font-family: 'Poppins', sans-serif;
@@ -6,59 +7,75 @@ $fuente: 'Poppins', sans-serif;
     padding: 0;
 
 }
-
-.container1{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+h2{
+    font-weight: 300;
     text-align: center;
+    margin: 15rem auto;
+}
+.contenedor-productos{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
     align-items: center;
     
-
-    .card{
-        padding: 1rem;
-        margin: 1rem;
-        border: 1px solid lightgray;
-        background-color: rgb(245, 245, 245);
-        .card_title{
-            font-size: 1.2rem;
-            text-transform: uppercase;
-        }
-        .card_title, .card_text{
+    .container1{
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        .card{
+            padding: 1rem;
             margin: 1rem;
-        }
-        .card_text{
-            font-weight: 300;
-        }
-        .item-count{
-            margin: 1rem;
-            padding: .3rem;
-            display: flex;
-            justify-content: center;
-
-            h3{
+            border: 1px solid lightgray;
+            background-color: rgb(245, 245, 245);
+            .card_title{
                 font-size: 1.2rem;
-                padding: .5rem;
+                text-transform: uppercase;
+            }
+            .card_title, .card_text{
+                margin: 1rem;
+            }
+            .card_text{
                 font-weight: 300;
-                margin: 0 2rem;
             }
-            button{
-                margin: .2rem;
-                padding: .2rem .5rem;
-                border-radius: 5px;
-                background-color: pink;
-                border-color: pink;
-            }
-        }
+            .item-count{
+                margin: 1rem;
+                padding: .3rem;
+                display: flex;
+                justify-content: center;
     
-        .btn-add-carrito{
-            font-size: 1rem;
-            font-weight: 300;
-            padding: .5rem 3rem;
-            background-color: white;
-            border-color: white;
-            box-shadow: 0 0 4px 1px lightgray;
+                h3{
+                    font-size: 1.2rem;
+                    padding: .5rem;
+                    font-weight: 300;
+                    margin: 0 2rem;
+                }
+                button{
+                    margin: .2rem;
+                    padding: .2rem .5rem;
+                    border-radius: 3px;
+                    background-color: $colorPrincipal;
+                    border-color: $colorPrincipal;
+                    color: white;
+                    font-size: 1.1rem;
+                    text-decoration: none;
+                }
+            }
+            
+            img{
+                width: 50%;
+            }
+        
+            .btn-add-carrito{
+                font-size: 1rem;
+                font-weight: 300;
+                padding: .5rem 3rem;
+                background-color: white;
+                border-color: white;
+                box-shadow: 0 0 4px 1px lightgray;
+            }
         }
+        
     }
-    
 }
