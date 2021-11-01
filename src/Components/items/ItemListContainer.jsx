@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import {renderPantalla} from './Stock'
-import { ItemList } from "./ItemList"
+import { ItemList } from "../items/ItemList"
 
 export const ItemListContainer = () => {
     const [product, setProduct] = useState([])

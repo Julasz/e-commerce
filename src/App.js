@@ -8,6 +8,10 @@ import './App.css';
 import './Components/navbar/navbar.scss'
 import './Components/items/itemCount.scss'
 import './Components/details/itemDetail.scss'
+
+
+
+
 // import { CarouselSlide } from './Components/index/CarouselSlide';
 
 

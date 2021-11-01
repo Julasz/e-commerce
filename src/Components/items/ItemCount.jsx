@@ -1,6 +1,7 @@
 
 import React, {useState} from 'react'
 import {Button } from "react-bootstrap"
+import { Link } from 'react-router-dom';
 
 export const ItemCount = ({stock, initial, onAdd}) => {
 
@@ -16,10 +17,16 @@ export const ItemCount = ({stock, initial, onAdd}) => {
         <>
             
             <div className='item-count'>
-                <Button onClick={RestarContador}>-</Button>
-                <h3>{contador}</h3>
-                <Button onClick={SumarContador}>+</Button>
-                <Button className='btn-add-contador' onClick={AgregarContador}>Agregar al carrito</Button>
+                <div className='botonesContador'>
+                    <Button onClick={RestarContador}>-</Button>
+                    <h3>{contador}</h3>
+                    <Button onClick={SumarContador}>+</Button>
+                </div>
+
+                <div className='botones'>
+                    <Button className='btn-add-contador' onClick={AgregarContador}>Agregar al carrito</Button>
+                    <Link to='/'><Button className='btn-add-contador'>Volver</Button></Link>
+                </div>
             </div>
         </>
     )
