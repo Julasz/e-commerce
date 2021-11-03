@@ -1,0 +1,24 @@
+$fuente: 'Poppins', sans-serif;
+$colorPrincipal: rgb(125, 204, 178);;
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+
+}
+h2{
+    font-weight: 300;
+    text-align: center;
+}
+.botones{
+    
+    .btn-volver-contador{
+        background-color: lightgray;
+        border-color: lightgray;
+    }
+    .btn-add-contador{
+        background-color: $colorPrincipal;
+        border-color: $colorPrincipal;
+    }
+}

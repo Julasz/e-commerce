@@ -1,18 +1,6 @@
 $fuente: 'Poppins', sans-serif;
 $colorPrincipal: rgb(103, 204, 170);
 
-*{
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-
-}
-h2{
-    font-weight: 300;
-    text-align: center;
-    margin: 15rem auto;
-}
-
 .contenedor-productos{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -26,13 +14,11 @@ h2{
         align-items: center;
         text-align: center;
         .card{
-            padding: 1rem;
             margin: 1rem;
             border: 1px solid lightgray;
             background-color: rgb(245, 245, 245);
             .card_title{
                 font-size: 1.2rem;
-                text-transform: uppercase;
             }
             .card_title, .card_text{
                 margin: 1rem;
@@ -45,6 +31,7 @@ h2{
                 padding: .3rem;
                 display: flex;
                 justify-content: center;
+                text-decoration: none;
     
                 h3{
                     font-size: 1.2rem;
@@ -60,14 +47,10 @@ h2{
                     border-color: $colorPrincipal;
                     color: white;
                     font-size: 1.1rem;
-                    text-decoration: none;
+                    
                 }
             }
             
-            img{
-                width: 50%;
-            }
-        
             .btn-add-carrito{
                 font-size: 1rem;
                 font-weight: 300;
@@ -76,6 +59,7 @@ h2{
                 border-color: white;
                 box-shadow: 0 0 4px 1px lightgray;
             }
+            
         }
         
     }

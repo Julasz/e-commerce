@@ -1,7 +1,8 @@
 import {useEffect, useState} from 'react'
-import { RenderUnProducto } from '../items/Stock'
+import { RenderUnProducto } from '../Stock/Stock'
 import { useParams } from 'react-router'
-import { ItemDetail } from './ItemDetail'
+import { ItemDetail } from '../ItemDetail/ItemDetail'
+import './itemDetailContainer.scss'
 
 export const ItemDetailsContainer = () => {
     const [product, setProduct] = useState([])

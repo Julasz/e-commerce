@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
-import {renderPantalla} from './Stock'
-import { ItemList } from "../items/ItemList"
+import {renderPantalla} from '../Stock/Stock'
+import { ItemList } from "../ItemList/ItemList"
+import './itemListContainer.scss'
 
 export const ItemListContainer = () => {
     const [product, setProduct] = useState([])
@@ -33,10 +34,10 @@ export const ItemListContainer = () => {
     console.log(id)
     
     return(
-        <>
+        <div className='itemListContainer'>
             { loading ? <h2>Cargando..</h2> :
                 <ItemList product={product}/>
             }
-        </>
+        </div>
     )
 }

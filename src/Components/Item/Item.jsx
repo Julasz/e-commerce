@@ -1,6 +1,7 @@
 import React from "react"
 import { Card } from "react-bootstrap"
 import { Link } from "react-router-dom"
+import '../ItemList/itemList.scss'
 
 export const Item = ({prod}) => {
 
@@ -9,7 +10,7 @@ export const Item = ({prod}) => {
                 <section className='container1'>
                     <div className='row'>
                         <Card className='card'>
-                            <Card.Img variant="top" src={prod.pictureUrl} alt="foto"/>
+                            <Link to={`/productos/${prod.id}`}><Card.Img variant="top" src={prod.pictureUrl} alt="foto"/></Link>
                             <Card.Body>
                                 <Card.Title className='card_title'>{prod.title} - {prod.categoria}</Card.Title>
                                 <Link className='item-count' to={`/productos/${prod.id}`}><button>Ver detalles</button></Link>
