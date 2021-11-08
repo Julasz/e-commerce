@@ -1,10 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useCartContext } from '../../context/CartContext'
 import {ItemCount} from '../ItemCount/ItemCount'
 import './itemDetail.scss'
  
+
 export const ItemDetail = ({product}) => {
     //GUARDAR LA CANTIDAD EMITIDA DESDE ONADD EN UN ESTADO
     // onAdd function. 
+    const [cantidad, setCantidad] = useState(1)
+   
+
+    const addCart = (cantidadAgregada) => {
+        setCantidad(cantidadAgregada)
+       
+    }
+
     return (
         <>
             <div className='detalle_container'>
@@ -19,7 +29,7 @@ export const ItemDetail = ({product}) => {
                     </div>
                     <h3 className='detalle_precio'>$ {product.price}</h3>
                     <div className='item_count'>
-                        <ItemCount  stock={product.stock} initial={0}/>
+                        <ItemCount  stock={product.stock} initial={cantidad} addCart={addCart}/>
                     </div>
                 </div>
             </div>

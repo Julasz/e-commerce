@@ -4,29 +4,36 @@ import {Button } from "react-bootstrap"
 import { Link } from 'react-router-dom';
 import './itemCount.scss'
 
-export const ItemCount = ({stock, initial, onAdd}) => {
+export const ItemCount = ({stock, initial, addCart}) => {
 
     const [contador, setContador] = useState(initial)
-    
+    const [cambio, setCambio] = useState(false)
    
-    const SumarContador = () => contador < stock ? setContador(contador + 1) : console.log(`Tenemos de stock solo ${stock} unidades`);
-    const RestarContador = () => contador > initial ? setContador(contador - 1) : console.log(`Se puede comprar desde 1 unidad`);
+    const SumarContador = () => {setContador(contador + 1)}
+    const RestarContador = () => {setContador(contador - 1)}
 
-    const AgregarContador = () => contador === 0 ? console.log(`Se desactiva`) : console.log(`Has comprado ${contador} productos`);
+    const AgregarCarrito = () => {
+        addCart (contador); 
+        setCambio(true)
+    }
 
     return (
         <>
             
             <div className='item-count'>
                 <div className='botonesContador'>
-                    <Button onClick={RestarContador}>-</Button>
+                    <Button onClick={RestarContador} disabled={(contador <= initial) ? true : false}>-</Button>
                     <h3>{contador}</h3>
-                    <Button onClick={SumarContador}>+</Button>
+                    <Button onClick={SumarContador} disabled={(contador >= stock) ? true : false}>+</Button>
                 </div>
 
                 <div className='botones'>
-                    <Button className='btn-add-contador' onClick={AgregarContador}>Agregar al carrito</Button>
-                    <Link to='/'><Button className='btn-volver-contador'>Volver</Button></Link>
+                {
+                    cambio ? <Link to='/cart'><Button className='btn-add-contador'>Terminar compra</Button></Link>
+                    :
+                    <Button className='btn-add-contador' onClick={AgregarCarrito}>Agregar al carrito</Button>
+                }
+                    <Link to='/'><Button className='btn-add-contador'>Volver</Button></Link>
                 </div>
             </div>
         </>

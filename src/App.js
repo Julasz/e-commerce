@@ -6,25 +6,27 @@ import {Cart} from './Components/cart/Cart'
 import {Contacto} from './Components/index/Contacto';
 import './App.css';
 import { Index } from './Components/index/Index';
+import CartContextProvider from './context/CartContext';
 
 
 function App() {
   return (
-    <>
+  
       <div>
-        <BrowserRouter>
-          <NavBar />
-          <Switch>
-            <Route exact path='/'><Index/></Route>  
-            <Route exact path='/categoria/:id' component={ItemListContainer}/>
-            <Route exact path='/productos/:productId' component={ItemDetailsContainer}/>
-            <Route exact path='/cart'>{Cart}</Route>
-            <Route exact path='/contacto'>{Contacto}</Route>
-          </Switch>
-        </BrowserRouter>
-
+        <CartContextProvider>
+          <BrowserRouter>
+            <NavBar />
+            <Switch>
+              <Route exact path='/'><Index/></Route>  
+              <Route exact path='/categoria/:id' component={ItemListContainer}/>
+              <Route exact path='/productos/:productId' component={ItemDetailsContainer}/>
+              <Route exact path='/cart'>{Cart}</Route>
+              <Route exact path='/contacto'>{Contacto}</Route>
+            </Switch>
+          </BrowserRouter>
+        </CartContextProvider>
       </div>
-    </>
+  
   );
 }
 
