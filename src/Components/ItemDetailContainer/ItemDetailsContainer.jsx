@@ -25,7 +25,7 @@ export const ItemDetailsContainer = () => {
     return (
         <>
             
-            { loading ? <h2>Cargado..</h2> : <ItemDetail product={product}/>     }
+            { loading ? <h2>Charginn..</h2> : <ItemDetail product={product}/>     }
         </>
     )
 }

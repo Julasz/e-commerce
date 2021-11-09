@@ -1,6 +1,12 @@
-
+import {memo} from 'react'
 import { Item } from "../Item/Item"
 import './itemList.scss'
+
+
+// memo ( () => {} )
+// se coloca antes de la llamada
+
+
 
 export const ItemList = ({product}) => {
     
