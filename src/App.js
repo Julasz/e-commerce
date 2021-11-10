@@ -2,11 +2,11 @@ import {BrowserRouter,Switch,Route} from 'react-router-dom'
 import NavBar from './Components/navbar/NavBar';
 import {ItemListContainer} from './Components/ItemListContainter/ItemListContainer';
 import {ItemDetailsContainer} from './Components/ItemDetailContainer/ItemDetailsContainer';
-import {Cart} from './Components/cart/Cart'
 import {Contacto} from './Components/index/Contacto';
 import './App.css';
 import { Index } from './Components/index/Index';
 import CartContextProvider from './context/CartContext';
+import Cart from './Components/cart/Cart';
 
 
 

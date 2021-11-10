@@ -7,11 +7,16 @@ import './itemDetail.scss'
 export const ItemDetail = ({product}) => {
     
     const [cantidad, setCantidad] = useState(1)
-    const {cartList, agregarAlCarrito} = useCartContext()
+
+    const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
+
+    
+    
 
     const addCart = (cantidadAgregada) => {
         setCantidad(cantidadAgregada)
-        agregarAlCarrito({product, cantidad:cantidadAgregada})
+        agregarAlCarrito({product, cantidad: cantidadAgregada})
+        
     }
     
     console.log(cartList)

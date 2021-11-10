@@ -31,7 +31,7 @@ export const ItemListContainer = () => {
 
 
     },[id])
-    console.log(id)
+   
     
     return(
         <div className='itemListContainer'>

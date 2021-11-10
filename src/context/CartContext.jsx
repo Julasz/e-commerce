@@ -1,32 +1,24 @@
-
-
-import { createContext, useContext, useState } from 'react'
+import { createContext, useState, useContext } from 'react'
 
 const CartContext = createContext()
-
-export const useCartContext = () => useContext(CartContext)
-//export const value = useContext(CartContext)
+export const useCartContext = () =>  useContext(CartContext)
 
 const CartContextProvider = ({children}) => {
     
+    const [cartList, setCartList] = useState([]) //adentro de este array se van a almacenar los productos del carrito
 
-    const [cartList, setCartList] = useState([])
-    
-    function agregarAlCarrito (items) {
-        setCartList([
-            ...cartList,
-            items
-        ])
+    function agregarAlCarrito (items){
+        
+        setCartList ([...cartList, items])
     }
-    
+
     const mostrarListado = (itemAgregado) => {
-        const encontrarItem = cartList.find(itemEnCarrito => itemEnCarrito.product.id === itemAgregado.product.id)
+        const encontrarItem = cartList.find(itemDelCarrito => itemDelCarrito.product.id === itemAgregado)
         if (encontrarItem) {
-            encontrarItem.contador = encontrarItem.contador + itemAgregado.contador
-            setCartList(cartList)
-        }
-        console.log(cartList)
+            return cartList
+        }else { setCartList([...cartList, encontrarItem])}
     }
+   
 
     const removerItem = idItemRemover => {
         setCartList( cartList.filter(itemBuscado => itemBuscado.product.id !== idItemRemover))
@@ -35,13 +27,18 @@ const CartContextProvider = ({children}) => {
     const removerCart = () => {
         setCartList([])
     }
-    
 
-    return(
-        <CartContext.Provider value={{cartList, mostrarListado, removerItem, removerCart, agregarAlCarrito}} >
-               
-                {children}
+    return (
+        <CartContext.Provider value={{
+            cartList,
+            mostrarListado,
+            agregarAlCarrito,
+            removerItem,
+            removerCart
+        }}>
+            {children}
         </CartContext.Provider>
     )
 }
+
 export default CartContextProvider
