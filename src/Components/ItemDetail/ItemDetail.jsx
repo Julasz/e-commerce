@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { useCartContext } from '../../context/CartContext'
-
 import {ItemCount} from '../ItemCount/ItemCount'
 import './itemDetail.scss'
 

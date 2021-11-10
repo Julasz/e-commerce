@@ -1,4 +1,4 @@
-import {memo} from 'react'
+
 import { Item } from "../Item/Item"
 import './itemList.scss'
 

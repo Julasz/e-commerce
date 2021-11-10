@@ -1,11 +1,15 @@
+
+
 import { createContext, useContext, useState } from 'react'
 
-const CartContext = createContext();
+const CartContext = createContext()
 
-export const useCartContext = () => useContext(CartContext);
+export const useCartContext = () => useContext(CartContext)
+//export const value = useContext(CartContext)
 
 const CartContextProvider = ({children}) => {
     
+
     const [cartList, setCartList] = useState([])
     
     function agregarAlCarrito (items) {
@@ -14,6 +18,7 @@ const CartContextProvider = ({children}) => {
             items
         ])
     }
+    
     const mostrarListado = (itemAgregado) => {
         const encontrarItem = cartList.find(itemEnCarrito => itemEnCarrito.product.id === itemAgregado.product.id)
         if (encontrarItem) {
@@ -30,12 +35,11 @@ const CartContextProvider = ({children}) => {
     const removerCart = () => {
         setCartList([])
     }
-
+    
 
     return(
-        <CartContext.Provider value={{
-            cartList, 
-            mostrarListado, removerItem, removerCart, agregarAlCarrito}}>
+        <CartContext.Provider value={{cartList, mostrarListado, removerItem, removerCart, agregarAlCarrito}} >
+               
                 {children}
         </CartContext.Provider>
     )

@@ -1,12 +1,13 @@
 import { useCartContext } from "../../context/CartContext"
 import { Link } from 'react-router-dom'
 import { Button } from 'react-bootstrap'
-
+import CartContext from '../../context/CartContext'
 
 export const Cart = () => {
 
-    const {cartList, removerItem, removerCart} = useCartContext()
+  
 
+    const {cartList, removerItem, removerCart} = useCartContext(CartContext)
 
     return (
         <div>
@@ -28,7 +29,7 @@ export const Cart = () => {
                         <p>{itemAgregado.product.price}</p>
                         <p>Cantidad elegida: {itemAgregado.contador}</p>
                     </div>
-                    <Button onClicl={ () => removerItem(itemAgregado.product.id)}>Elimiar producto</Button>
+                    <Button onClick={ () => removerItem(itemAgregado.product.id)}>Elimiar producto</Button>
                 </div>
             
             )}
