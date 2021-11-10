@@ -9,6 +9,7 @@ import { Index } from './Components/index/Index';
 import CartContextProvider from './context/CartContext';
 
 
+
 function App() {
   return (
   
@@ -25,6 +26,7 @@ function App() {
             </Switch>
           </BrowserRouter>
         </CartContextProvider>
+        
       </div>
   
   );

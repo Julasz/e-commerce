@@ -1,20 +1,21 @@
 import { useState } from 'react'
 import { useCartContext } from '../../context/CartContext'
+
 import {ItemCount} from '../ItemCount/ItemCount'
 import './itemDetail.scss'
- 
+
 
 export const ItemDetail = ({product}) => {
-    //GUARDAR LA CANTIDAD EMITIDA DESDE ONADD EN UN ESTADO
-    // onAdd function. 
+    
     const [cantidad, setCantidad] = useState(1)
-    const {mostrarListado} = useCartContext()
+    const {cartList, agregarAlCarrito} = useCartContext()
 
     const addCart = (cantidadAgregada) => {
         setCantidad(cantidadAgregada)
-        mostrarListado({product, contador:cantidadAgregada})
+        agregarAlCarrito({product, cantidad:cantidadAgregada})
     }
-
+    
+    console.log(cartList)
     return (
         <>
             <div className='detalle_container'>
