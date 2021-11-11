@@ -13,9 +13,10 @@ const CartContextProvider = ({children}) => {
     }
 
     const mostrarListado = (itemAgregado) => {
-        const encontrarItem = cartList.find(itemDelCarrito => itemDelCarrito.product.id === itemAgregado)
+        const encontrarItem = cartList.find(itemDelCarrito => itemDelCarrito.product.id === itemAgregado.id)
+
         if (encontrarItem) {
-            return cartList
+            
         }else { setCartList([...cartList, encontrarItem])}
     }
    
@@ -27,6 +28,12 @@ const CartContextProvider = ({children}) => {
     const removerCart = () => {
         setCartList([])
     }
+    
+    let data = [cartList.product]
+    const noDuplicar = new Set(data)
+    let result = [...noDuplicar]
+
+    console.log('hola soy el resultado no duplicar', result)
 
     return (
         <CartContext.Provider value={{

@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import {renderPantalla} from '../Stock/Stock'
 import { ItemList } from "../ItemList/ItemList"
 import './itemListContainer.scss'
+import { getFirestore } from '../Stock/getFirestore'
 
 export const ItemListContainer = () => {
     const [product, setProduct] = useState([])
@@ -11,6 +12,26 @@ export const ItemListContainer = () => {
     const {id} = useParams()    
 
     useEffect(() => {
+
+
+        //const dbConexion = getFirestore()
+        //const dbQuery = dbConexion.collection('items').get() //la coleccion a la que quiero hacer refrencia
+        
+        //const dbQuery = dbConexion.collection('items').where('price', '>', 1000).get() // con esto se trae productos mayores a 400
+        // 
+        //dbQuery
+        //.then(resp => setProduct ( resp.docs.map( prod => ({id: prod.id, ...prod.data() }))))
+        //.then(resp => console.log(resp)) // para traer todos 
+        //const dbQuery = dbConexion.collection('items').doc(
+        //     '0J7fRM3riaHOFYoCmJdd').get()
+        // dbQuery
+        // .then(resp => setProduct({ id: resp.id, ...resp.data() })) //para traer uno solo. En itemDetailContainer
+        //                                     //id del USEPARAMS            // data permite extraer el objeto que necesito
+        //.catch
+        //.finally
+
+
+
 
         if (id) {
             renderPantalla
