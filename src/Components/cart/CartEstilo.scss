@@ -1,0 +1,52 @@
+
+button{
+    .btn-remover{
+
+    }
+}
+.container-carrito-vacio{
+
+}
+.link-iniciar-compra{
+
+}
+div{
+    .carrito-lleno{
+        margin: 1rem;
+        padding: 1.5rem;
+        border-radius: 5px;
+        background-color: bisque;
+    }
+    .carrito-vacio{
+        display: none;
+    }
+
+    Table{
+        .itemAgregado-cantidad, .itemAgregado-price, .itemAgregado-titulo{
+            text-align: center;
+            padding: 1rem;
+        }
+        .itemAgregado-titulo{
+            font-size: 1rem;
+        }
+        .itemAgregado-price{
+            font-size: .9rem;
+        }
+        .itemAgregado-cantidad{
+            font-size: .9rem;
+        }
+    }
+    Button{
+        .remover-item{
+            color: lightpink;
+            background-color: lightpink;
+            border-radius: 5px;
+            border-style: none;
+            padding: .5rem;
+        }
+    }
+    .cartTotal{
+        font-weight: bold;
+        font-size: 1.3rem;
+    }
+}

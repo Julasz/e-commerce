@@ -14,7 +14,8 @@ export const ItemCount = ({stock, initial, addCart}) => {
     const RestarContador = () => {setContador(contador - 1)}
 
     const AgregarCarrito = () => {
-        addCart (contador); 
+        addCart (contador)
+        setContador(initial)
         setCambio(true)
     }
 

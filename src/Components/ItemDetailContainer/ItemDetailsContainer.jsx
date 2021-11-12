@@ -1,6 +1,6 @@
 import {useEffect, useState} from 'react'
-import { RenderUnProducto } from '../Stock/Stock'
 import { useParams } from 'react-router'
+import { getFirestore } from '../Stock/getFirestore'
 import { ItemDetail } from '../ItemDetail/ItemDetail'
 import './itemDetailContainer.scss'
 
@@ -12,20 +12,24 @@ export const ItemDetailsContainer = () => {
     const {productId} = useParams()
     
     useEffect(() => {
-        RenderUnProducto
-        .then(res =>{
-            
-            setProduct(res.find(prod => prod.id === productId))
-        })
+
+        const dataBase = getFirestore()
+
+       
+        const dataBaseQuery = dataBase.collection('items').doc(productId).get()
+
+        dataBaseQuery
+        .then(item => setProduct({ id:item.id, ...item.data() }) )
         .catch( error => alert(`Error: ${error}`))
         .finally(() => setLoading(false))
+
         
     },[productId])
     
     return (
         <>
             
-            { loading ? <h2>Charginn..</h2> : <ItemDetail product={product}/>     }
+            { loading ? <h2>Cargando productos..</h2> : <ItemDetail product={product}/>     }
         </>
     )
 }

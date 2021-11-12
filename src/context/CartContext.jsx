@@ -7,9 +7,9 @@ const CartContextProvider = ({children}) => {
     
     const [cartList, setCartList] = useState([]) //adentro de este array se van a almacenar los productos del carrito
     const [itemCantidad, setItemCantidad] = useState(0)
-    const [cartTotal, setCartTotal] = useState([])
+    const [cartTotal, setCartTotal] = useState(0)
 
-    function agregarAlCarrito (items){
+    const agregarAlCarrito = (items) => {
         setItemCantidad(itemCantidad + items.contador)
         setCartTotal(cartTotal + (items.product.price * items.contador))
         const encontrarItem = cartList.find(itemDelCarrito => itemDelCarrito.product.id === items.product.id)

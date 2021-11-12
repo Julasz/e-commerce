@@ -3,13 +3,6 @@ import { Item } from "../Item/Item"
 import { memo } from 'react'
 import './itemList.scss'
 
-
-// memo ( () => {} ) call back
-
-// se coloca antes de la llamada
-
-
-
 export const ItemList = memo(
 
     ({product}) => {

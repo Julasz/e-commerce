@@ -13,8 +13,7 @@ export const ItemDetail = ({product}) => {
 
     const addCart = (cantidadAgregada) => {
         setContador(cantidadAgregada)
-        agregarAlCarrito({product, contador: cantidadAgregada})
-        
+        agregarAlCarrito({product, cantidad: cantidadAgregada})
     }
     
     return (

@@ -10,8 +10,8 @@ const firebaseConfig = {
     appId: "1:532464529390:web:496ea8335c09041161e8ff"
 };
 
-const app = firebase.initializeApp(firebaseConfig);
+const productos = firebase.initializeApp(firebaseConfig);
 
 export function getFirestore(){
-    return firebase.firestore(app)
+    return firebase.firestore(productos)
 }

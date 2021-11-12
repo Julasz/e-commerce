@@ -1,0 +1,14 @@
+.contenedor-carrito{
+    text-decoration: none;
+
+    .boton-del-carrito{
+        background-color: transparent;
+        border-color: transparent;
+        .cantidad-carrrito{
+            font-size: .5rem;
+            background-color: lightpink;
+            border-radius: 50%;
+            color: black;
+        }
+    }
+}
