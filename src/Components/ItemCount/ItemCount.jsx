@@ -8,6 +8,7 @@ export const ItemCount = ({stock, initial, addCart}) => {
 
     const [contador, setContador] = useState(initial)
     const [cambio, setCambio] = useState(false)
+    // const [loading, setLoading] = useState(true)
    
     const SumarContador = () => {setContador(contador + 1)}
     const RestarContador = () => {setContador(contador - 1)}

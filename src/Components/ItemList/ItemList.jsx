@@ -1,18 +1,22 @@
 
 import { Item } from "../Item/Item"
+import { memo } from 'react'
 import './itemList.scss'
 
 
-// memo ( () => {} )
+// memo ( () => {} ) call back
+
 // se coloca antes de la llamada
 
 
 
-export const ItemList = ({product}) => {
+export const ItemList = memo(
+
+    ({product}) => {
     
     
     console.log({product})
-
+    
     return (
         <div className='contenedor-productos'>
             {product.map( prod => <Item key={prod.id} prod={prod}/>)}
@@ -20,4 +24,7 @@ export const ItemList = ({product}) => {
         </div>
         
     ) 
-}
+    }
+
+, (prevProp, nextProp) => prevProp.product.length === nextProp.product.length)
+    

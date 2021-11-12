@@ -6,20 +6,17 @@ import './itemDetail.scss'
 
 export const ItemDetail = ({product}) => {
     
-    const [cantidad, setCantidad] = useState(1)
+    const [contador, setContador] = useState(1)
 
-    const {cartList, mostrarListado, agregarAlCarrito} = useCartContext()
+    const {agregarAlCarrito} = useCartContext()
 
-    
-    
 
     const addCart = (cantidadAgregada) => {
-        setCantidad(cantidadAgregada)
-        agregarAlCarrito({product, cantidad: cantidadAgregada})
+        setContador(cantidadAgregada)
+        agregarAlCarrito({product, contador: cantidadAgregada})
         
     }
     
-    console.log(cartList)
     return (
         <>
             <div className='detalle_container'>
@@ -34,7 +31,7 @@ export const ItemDetail = ({product}) => {
                     </div>
                     <h3 className='detalle_precio'>$ {product.price}</h3>
                     <div className='item_count'>
-                        <ItemCount  stock={product.stock} initial={cantidad} addCart={addCart}/>
+                        <ItemCount  stock={product.stock} initial={contador} addCart={addCart}/>
                     </div>
                 </div>
             </div>

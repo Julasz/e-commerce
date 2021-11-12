@@ -2,8 +2,9 @@ import {useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom'
 import {renderPantalla} from '../Stock/Stock'
 import { ItemList } from "../ItemList/ItemList"
+import Spinner from 'react-bootstrap/Spinner'
 import './itemListContainer.scss'
-import { getFirestore } from '../Stock/getFirestore'
+// import { getFirestore } from '../Stock/getFirestore'
 
 export const ItemListContainer = () => {
     const [product, setProduct] = useState([])
@@ -56,7 +57,14 @@ export const ItemListContainer = () => {
     
     return(
         <div className='itemListContainer'>
-            { loading ? <h2>Cargando..</h2> :
+            { loading 
+                ? 
+                    <h2>
+                        <Spinner animation="grow" size="sm" />
+                        <Spinner animation="grow" />
+                        Cargando..
+                    </h2>
+                :
                 <ItemList product={product}/>
             }
         </div>
