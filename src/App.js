@@ -7,6 +7,7 @@ import Cart from './Components/cart/Cart';
 import Contacto from './Components/index/Contacto'
 import './App.css';
 import {Index} from './Components/index/Index'
+import Footer from './Components/index/Footer';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route exact path="/cart" component={Cart}/>
             <Route exact path="/contacto">{Contacto}</Route>
           </Switch>
+          <Footer/>
         </BrowserRouter>
       </CartContextProvider>
     </div>

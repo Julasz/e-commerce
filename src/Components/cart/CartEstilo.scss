@@ -1,16 +1,44 @@
 
 button{
     .btn-remover{
-
+        padding: .5rem;
+        border-radius: 5px;
+        font-size: 1.2rem;
+        margin-top: 3rem;
+        border: none;
     }
 }
 .container-carrito-vacio{
+    margin-top: 15rem;
+    p{
+        margin: 3rem;
+        font-size: 2rem;
+        text-align: center;
+    }
+    .link-iniciar-compra{
+        display: flex;
+        justify-content: center;
+        font-size: 1.5rem;
+        text-decoration: none;
+        color: black;
+        background-color: lightpink;
+        width: 15%;
+        margin: 0 auto;
+        border-radius: 5px;
+        padding: 1rem;
+
+    }
+    .carrito{
+        width: 100%;
+        font-size: 3rem;
+        margin-top: 2rem;
+    }
 
 }
 .link-iniciar-compra{
 
 }
-div{
+.contenedor-carrito-lleno{
     .carrito-lleno{
         margin: 1rem;
         padding: 1.5rem;
@@ -24,10 +52,10 @@ div{
     Table{
         .itemAgregado-cantidad, .itemAgregado-price, .itemAgregado-titulo{
             text-align: center;
-            padding: 1rem;
+            padding: 1.3rem;
         }
         .itemAgregado-titulo{
-            font-size: 1rem;
+            font-size: 1.4rem;
         }
         .itemAgregado-price{
             font-size: .9rem;

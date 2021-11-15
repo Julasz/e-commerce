@@ -11,7 +11,7 @@ const Item = ({prod}) => {
                         <Card className='card'>
                             <Link to={`/productos/${prod.id}`}><img className="item-img" src={prod.pictureUrl} alt={prod.title}/></Link>
                             <h3>{prod.title} - {prod.categoria}</h3>
-                            <Link to={`/productos/${prod.id}`}><button className='item-count'>Más información</button></Link>
+                            <Link to={`/productos/${prod.id}`}  className='item-count'><button>Más información</button></Link>
                             <p className='card_text'>Tenemos {prod.stock} unidades disponibles</p>
                         </Card>
                     </div>
