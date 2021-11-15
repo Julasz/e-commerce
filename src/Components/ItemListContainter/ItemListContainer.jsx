@@ -1,63 +1,50 @@
-import {useEffect, useState} from 'react'
-import { useParams } from 'react-router-dom'
-import { ItemList } from "../ItemList/ItemList"
-import Spinner from 'react-bootstrap/Spinner'
-import './itemListContainer.scss'
-import { getFirestore } from '../Stock/getFirestore'
+import {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
+import {getFirestore} from '../../services/getFirestore';
+import ItemList from '../ItemList/ItemList';
+import './itemListContainer.scss';
 
-export const ItemListContainer = () => {
-    const [product, setProduct] = useState([])
-    const [loading, setLoading] = useState(true)
+const ItemListContainer = () => {
 
-    const {id} = useParams()    
+    const [product, setProduct] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    const {id} = useParams();
 
     useEffect(() => {
 
-        const dataBase = getFirestore()
+        const dataBase = getFirestore() 
         
         if (id) {
-            const dataBaseQuery = dataBase.collection('items').where('categoria', '==', id).get() //la coleccion a la que quiero hacer refrencia
-            
-            dataBaseQuery
-            .then( resp => setProduct( resp.docs.map( item => ({ id:item.id, ...item.data() }) )))
-            .catch( error => alert(`Error: ${error}`))
-            .finally(() => setLoading(false))
 
-            // renderPantalla
-            // .then(res =>{
-            //     setProduct(res.filter(prod => prod.categoria === id))
-            // })
-            // .catch( error => alert(`Error: ${error}`))
-        } else{
-            const dataBaseQuery = dataBase.collection('items').orderBy('categoria').get()
+            const dataBaseQuery = dataBase.collection("items").where("categoria", "==", id).get() //la coleccion a la que quiero hacer refrencia
 
             dataBaseQuery
-            .then( resp => setProduct(resp.docs.map( item => ({ id:item.id, ...item.data() }) )))
-            .catch( error => console.log(error))
-            .finally(() => setLoading(false))
-
-            // renderPantalla
-            // .then(res =>{
-            //     setProduct(res)
-            // })
+            .then(resp => setProduct(resp.docs.map(item => ({id:item.id, ...item.data()}))))
+            .catch (error => alert("Error:", error))
+            .finally(()=> setLoading(false))
         }
 
+        else {
+
+            const dataBaseQuery = dataBase.collection("items").orderBy("categoria").get() //ordenados por categoria
+
+            dataBaseQuery
+            .then(resp => setProduct(resp.docs.map(item => ({id:item.id, ...item.data() }) )))
+            .catch (error => alert("Error:", error))
+            .finally(()=> setLoading(false))
+        } 
 
     },[id])
-   
-    
-    return(
-        <div className='itemListContainer'>
-            { loading 
-                ? 
-                    <h2>
-                        <Spinner animation="grow" size="sm" />
-                        <Spinner animation="grow" />
-                        Cargando..
-                    </h2>
-                :
-                <ItemList product={product}/>
-            }
-        </div>
+
+    return (
+            <div className="itemListContainer">
+                {loading
+                ? <h2 className="loading">Los productos se están cargando</h2>
+                : <ItemList product={product}/>
+                }
+            </div>
     )
 }
+
+export default ItemListContainer

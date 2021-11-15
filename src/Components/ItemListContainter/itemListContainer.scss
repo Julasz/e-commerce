@@ -1,5 +1,12 @@
+$colorNav: #3AC9B9;
 .itemListContainer{
     padding: 3rem;
     width: 70%;
     margin: 0 auto;
+
+    .loading {
+        margin-top:20px;
+        font-size:18px;
+        color:$colorNav;
+    }
 }

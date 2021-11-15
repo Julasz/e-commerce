@@ -1,11 +1,14 @@
 .contenedor-carrito{
     text-decoration: none;
-
+    display: flex;
     .boton-del-carrito{
         background-color: transparent;
         border-color: transparent;
+        display: contents;
+
         .cantidad-carrrito{
-            font-size: .5rem;
+            font-size: 1rem;
+            padding: .2rem;
             background-color: lightpink;
             border-radius: 50%;
             color: black;

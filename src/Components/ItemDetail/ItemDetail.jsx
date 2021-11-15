@@ -1,39 +1,37 @@
-import { useState } from 'react'
-import { useCartContext } from '../../context/CartContext'
-import {ItemCount} from '../ItemCount/ItemCount'
-import './itemDetail.scss'
+import {useState} from 'react';
+import ItemCount from '../ItemCount/ItemCount';
+import {useCartContext} from '../../context/CartContext';
+import './itemDetail.scss'; 
 
-
-export const ItemDetail = ({product}) => {
+const ItemDetail = ({product}) => {
     
-    const [contador, setContador] = useState(1)
-
-    const {agregarAlCarrito} = useCartContext()
-
+    const [cantidad, setCantidad] = useState (1);
+    const {addAlCarrito} = useCartContext();
 
     const addCart = (cantidadAgregada) => {
-        setContador(cantidadAgregada)
-        agregarAlCarrito({product, cantidad: cantidadAgregada})
+        setCantidad(cantidadAgregada);
+        addAlCarrito({product, cantidad: cantidadAgregada});
     }
-    
+
     return (
-        <>
-            <div className='detalle_container'>
+            <div className="detalle_container">
                 <div className='seccionUno'>
-                    <img className='detalle_imagen' src={product.pictureUrl} alt={product.description}/>
+                    <img className="detalle_imagen" src={product.pictureUrl} alt={product.title}/>
 
                 </div>
-                <div className='seccionDos'>
+                <div className="seccionDos">
                     <div className='detalle_descripcion'>
-                        <h2>{product.title}</h2>
-                        <p>{product.description}</p>
+                        <h2 className="item-detail-title">{product.title}</h2>
+                        <p className="item-detail-description">{product.description}</p>
                     </div>
                     <h3 className='detalle_precio'>$ {product.price}</h3>
-                    <div className='item_count'>
-                        <ItemCount  stock={product.stock} initial={contador} addCart={addCart}/>
-                    </div>
+                </div>
+                <div className='item_count'>
+                    <ItemCount initial={cantidad} stock={product.stock} addCart={addCart}/>
+
                 </div>
             </div>
-        </>
     )
 }
+
+export default ItemDetail

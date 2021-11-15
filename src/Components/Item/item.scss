@@ -1,0 +1,22 @@
+$colorNav: #3AC9B9;
+
+.container1{   
+    margin: 1rem;
+    padding: 1rem;
+    border-radius:20px;
+    border-color:lightgray;
+
+    .card{
+
+        .item-img {
+            width:200px;
+        }
+        .item-count{
+            color: $colorNav;
+            background-color:white;
+            border-style:none;
+            padding:5px;
+        }
+    }
+    
+}

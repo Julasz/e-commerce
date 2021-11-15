@@ -1,5 +1,5 @@
 $fuente: 'Poppins', sans-serif;
-
+$colorNav: #3AC9B9;
 *{
     font-family: 'Poppins', sans-serif;
     margin: 0;
@@ -8,7 +8,7 @@ $fuente: 'Poppins', sans-serif;
 }
 /* NAV BAR PRINCIPAL */
 .ContenedorLista{
-    background-color: #3AC9B9;
+    background-color: $colorNav;
     padding: .5rem;
     display: flex;
     align-items: center;

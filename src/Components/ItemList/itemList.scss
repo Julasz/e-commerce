@@ -27,11 +27,13 @@ $colorPrincipal: rgb(103, 204, 170);
                 font-weight: 300;
             }
             .item-count{
-                margin: 1rem;
+                margin: 0 auto;
                 padding: .3rem;
                 display: flex;
                 justify-content: center;
                 text-decoration: none;
+                text-transform: none;
+                background-color: transparent;
     
                 h3{
                     font-size: 1.2rem;
@@ -62,5 +64,14 @@ $colorPrincipal: rgb(103, 204, 170);
             
         }
         
+    }
+}
+@media only screen and (max-width:600px) {
+    .contenedor-productos{
+        display:grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap:1rem;
+        margin-top:.5rem;
+        padding:1rem;
     }
 }

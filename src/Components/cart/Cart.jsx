@@ -1,56 +1,38 @@
-
-import { useCartContext } from '../../context/CartContext'
-import {Table} from 'react-bootstrap'
-import Button from '@restart/ui/esm/Button'
-import { Link } from 'react-router-dom'
-import './CartEstilo.scss'
-
+import {useCartContext} from '../../context/CartContext';
+import {Link} from "react-router-dom";
+import './CartEstilo.scss'; 
 
 const Cart = () => {
-
-    const {cartList, removerItem, removerCart, cartTotal} = useCartContext()
     
+    const {cartList, removerItem, removerCart, cartTotal} = useCartContext()
+
     return (
         <div>
-            {cartList.length ? <button className='btn-remover' onClick={() => removerCart()}>Vaciar carrito</button>
-            :
-            <div className='container-carrito-vacio'>
-                <p>¡El carrito está vacío!</p>
-                <Link className='link-iniciar-compra' to='/'>Iniciar compra</Link>
-            </div>
+            {cartList.length ? <button className="btn-remover" onClick={() => removerCart()}>Vaciar carrito</button>
+            : 
+                <div className="container-carrito-vacio">
+                    <p>¡El carrito está vacío!</p>
+                    <Link className='link-iniciar-compra' to="/">Empezar a comprar</Link>
+                </div>
             }
-            <div className={cartList.length ? 'carrito-lleno' : 'carrito-vacio'}>
-
-                {cartList.map(itemAgredado =>
-                    <div className='card w-50' key={itemAgredado.product.id}>
-                        <Table>
-                            <thead>
-                                <tr>
-                                    <th>Producto</th>
-                                    <th>Cantidad</th>
-                                    <th>Total</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th className='itemAgregado-titulo'>{itemAgredado.product.title}</th>
-                                    <th className='itemAgregado-price'>{itemAgredado.product.price}</th>
-                                    <th className='itemAgregado-cantidad'>{itemAgredado.contador}</th>
-                                </tr>
-                            </tbody>
-                        </Table>
+            <div className={cartList.length ? 'carrito-lleno' : 'carrito-vacio' }> 
+                {cartList.map(items => 
+                    <div className="item-added-card" key={items.product.id} >
+                        <img className="item-added-img" src={items.product.pictureUrl} alt={items.product.title}/>
+                        <div className="item-added-info">
+                            <h5 className="itemAgregado-titulo">{items.product.title}</h5>
+                            <p className="itemAgregado-price">$ {items.product.price}</p>
+                            <p className="itemAgregado-cantidad">Cantidad: {items.cantidad}</p>
+                        </div>
                         <div>
-                            <Button className='remover-item' onClick={() => removerItem(itemAgredado.product.id)}>Quitar producto</Button>
+                            <button className="btn-remover" onClick={() => removerItem(items.product.id)}>Eliminar producto</button>
                         </div>
                     </div>
                 )}
-
                 <div>
-                    <h4 className='cartTotal'>El total de la compra es: {cartTotal}</h4>
+                    <p className="cart-total">El total de la compra es $ {cartTotal}</p>
                 </div>
-
             </div>
-            
         </div>
     )
 }

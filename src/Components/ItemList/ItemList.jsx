@@ -1,23 +1,18 @@
+import {memo} from "react";
+import Item from "../Item/Item";
+import './itemList.scss';
 
-import { Item } from "../Item/Item"
-import { memo } from 'react'
-import './itemList.scss'
-
-export const ItemList = memo(
+const ItemList = memo (
 
     ({product}) => {
-    
-    
-    console.log({product})
-    
-    return (
-        <div className='contenedor-productos'>
-            {product.map( prod => <Item key={prod.id} prod={prod}/>)}
-            
-        </div>
         
-    ) 
+        return (
+            <div className="contenedor-productos">
+                {product.map(prod => <Item key={prod.id} prod={prod}/>
+                )}
+            </div>
+        )
     }
+)
 
-, (prevProp, nextProp) => prevProp.product.length === nextProp.product.length)
-    
+export default ItemList

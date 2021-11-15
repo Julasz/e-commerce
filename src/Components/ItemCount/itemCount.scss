@@ -1,5 +1,7 @@
 $fuente: 'Poppins', sans-serif;
-$colorPrincipal: rgb(125, 204, 178);;
+$colorPrincipal: rgb(125, 204, 178);
+$colorNav: #3AC9B9;
+
 
 *{
     font-family: 'Poppins', sans-serif;
@@ -11,14 +13,51 @@ h2{
     font-weight: 300;
     text-align: center;
 }
-.botones{
-    
-    .btn-volver-contador{
-        background-color: lightgray;
-        border-color: lightgray;
+.item-count{
+    .botonesContador{
+        display: flex;
+        justify-content: center;
+        padding: .5rem;
+        align-items: center;
+
+        .btn-contador{
+            color:white;
+            background-color: $colorPrincipal;
+            border-radius: 5px;
+            border-style: none;
+            padding: .5rem;
+            margin: 0 1rem;
+            font-size: 1.5rem;
+        }
+        .btn-contador:disabled {
+            background-color:$colorPrincipal;
+        }
     }
-    .btn-add-contador{
-        background-color: $colorPrincipal;
-        border-color: $colorPrincipal;
+    .botones{
+        margin: 1rem;
+        .btn-volver-contador{
+            
+            background-color: lightgray;
+            border-color: lightgray;
+        }
+        .btn-add-contador, .btn-volver-contador, .btn-add-terminar{
+            padding: .8rem;
+            margin: 1rem;
+            border-radius: 5px;
+            font-size: 1.2rem;
+        }
+        .btn-add-contador{
+            background-color: $colorPrincipal;
+        }
+        .btn-add-terminar{
+            background-color: $colorNav;
+        }
+        .btn-add-contador, .btn-add-terminar{
+            color:white;
+            border-radius: 5px;
+            border-style: none;
+            padding: 1rem;
+        }
+        
     }
 }

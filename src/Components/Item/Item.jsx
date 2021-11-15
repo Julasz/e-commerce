@@ -1,27 +1,23 @@
+import {Link} from "react-router-dom";
+import {Card} from 'react-bootstrap'
+import './item.scss'; 
 
-import { Card } from "react-bootstrap"
-import { Link } from "react-router-dom"
-import '../ItemList/itemList.scss'
-
-export const Item = ({prod}) => {
-
+const Item = ({prod}) => {
+    
     return (
-            <div className="container1">
-                <section className='container1'>
-                    <div className='row'>
+            <div className="container1" >
+                <section className="container1">
+                    <div className="row">
                         <Card className='card'>
-                            <Link to={`/productos/${prod.id}`}><Card.Img variant="top" src={prod.pictureUrl} alt="foto"/></Link>
-                            <Card.Body>
-                                <Card.Title className='card_title'>{prod.title} - {prod.categoria}</Card.Title>
-                                <Link className='item-count' to={`/productos/${prod.id}`}><button>Ver detalles</button></Link>
-                                <Card.Text className='card_text'>Tenemos {prod.stock} unidades disponibles</Card.Text>
-                            </Card.Body>
+                            <Link to={`/productos/${prod.id}`}><img className="item-img" src={prod.pictureUrl} alt={prod.title}/></Link>
+                            <h3>{prod.title} - {prod.categoria}</h3>
+                            <Link to={`/productos/${prod.id}`}><button className='item-count'>Más información</button></Link>
+                            <p className='card_text'>Tenemos {prod.stock} unidades disponibles</p>
                         </Card>
                     </div>
                 </section>
             </div>
-
     )
-
 }
 
+export default Item

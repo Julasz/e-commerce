@@ -1,56 +1,43 @@
-import { createContext, useState, useContext } from 'react'
+import {createContext, useContext, useState} from "react";
 
 const CartContext = createContext();
-export const useCartContext = () =>  useContext(CartContext);
+
+export const useCartContext = () => useContext (CartContext);
 
 const CartContextProvider = ({children}) => {
-    
-    const [cartList, setCartList] = useState([]) //adentro de este array se van a almacenar los productos del carrito
-    const [itemCantidad, setItemCantidad] = useState(0)
-    const [cartTotal, setCartTotal] = useState(0)
 
-    const agregarAlCarrito = (items) => {
-        setItemCantidad(itemCantidad + items.contador)
-        setCartTotal(cartTotal + (items.product.price * items.contador))
-        const encontrarItem = cartList.find(itemDelCarrito => itemDelCarrito.product.id === items.product.id)
+    const [cartList, setCartList] = useState([]);
+    const [itemCantidad, setItemCantidad] = useState(0);
+    const [cartTotal, setCartTotal] = useState(0);
 
+    const addAlCarrito = items => {
+        setItemCantidad(itemCantidad + items.cantidad)
+        setCartTotal(cartTotal + (items.product.price * items.cantidad))
+        const encontrarItem = cartList.find(itemDelCarrito => itemDelCarrito.product.id === items.product.id)        
         if (encontrarItem) {
-            encontrarItem.contador = encontrarItem.contador + items.contador
-            setCartList(cartList)            
-        }else {
-            setCartList ([...cartList, items])
-
+            encontrarItem.cantidad = encontrarItem.cantidad + items.cantidad
+            setCartList(cartList)
+        }
+        else {
+            setCartList(anteriorItem => [...anteriorItem, items])
         }
     }
 
-    const data = [cartList.product]
-    const noDuplicar = new Set(data)
-    let result = [...noDuplicar]
-
-    console.log('hola soy el resultado no duplicar', result)
-
-
-    const removerItem = idItemRemover => {
-        setCartList( cartList.filter(itemBuscado => itemBuscado.product.id !== idItemRemover))
-        setItemCantidad(itemCantidad - idItemRemover.contador)
-        setCartTotal( cartTotal - (idItemRemover.product.price * idItemRemover.contador))
-        setCartList(cartList.filter(itemBuscado => itemBuscado.product.id !== idItemRemover))
+    const removerItem = itemRemoverId => {
+        const itemRemover = cartList.find(itemEnCarrito => itemEnCarrito.product.id === itemRemoverId)
+        setCartList(cartList.filter(itemBuscado => itemBuscado.product.id !== itemRemoverId))
+        setItemCantidad(itemCantidad - itemRemover.cantidad)
+        setCartTotal(cartTotal - (itemRemover.product.price * itemRemover.cantidad))
     }
 
     const removerCart = () => {
         setItemCantidad(0)
-        setCartTotal(0)
+        setCartTotal (0)
         setCartList([])
     }
-    
-    
+
     return (
-        <CartContext.Provider value={{
-            cartList,
-            agregarAlCarrito,
-            removerItem,
-            removerCart
-        }}>
+        <CartContext.Provider value={{cartList, addAlCarrito, removerItem, removerCart, itemCantidad, cartTotal}}>
             {children}
         </CartContext.Provider>
     )

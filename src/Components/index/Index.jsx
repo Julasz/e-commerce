@@ -1,5 +1,4 @@
-import React from 'react'
-import { ItemListContainer } from '../ItemListContainter/ItemListContainer'
+import ItemListContainer from '../ItemListContainter/ItemListContainer'
 import './index.scss'
 
 export const Index = () => {
