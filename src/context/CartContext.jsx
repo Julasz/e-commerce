@@ -9,7 +9,6 @@ const CartContextProvider = ({children}) => {
     const [cartList, setCartList] = useState([]);
     const [itemCantidad, setItemCantidad] = useState(0);
     const [cartTotal, setCartTotal] = useState(0);
-    const [formData, setFormData] = useState({name: "", phone: "", email: "", email2: ""})
 
     const addAlCarrito = items => {
         setItemCantidad(itemCantidad + items.cantidad)
@@ -36,15 +35,8 @@ const CartContextProvider = ({children}) => {
         setCartTotal (0)
         setCartList([])
     } 
-
-    const getForm =(e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        })
-    }
     return (
-        <CartContext.Provider value={{cartList, addAlCarrito, removerItem, removerCart, itemCantidad, cartTotal, getForm, formData}}>
+        <CartContext.Provider value={{cartList, addAlCarrito, removerItem, removerCart, itemCantidad, cartTotal}}>
             {children}
         </CartContext.Provider>
     )

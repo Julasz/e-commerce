@@ -50,9 +50,6 @@ const Cart = () => {
             .catch (error => alert(`Ha ocurrido un error: ${error}`))
         })
     }
-    
-    
-
     return (
         <>
             <div>
