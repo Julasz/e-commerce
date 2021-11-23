@@ -17,7 +17,6 @@ const ItemDetail = ({product}) => {
             <div className="detalle_container">
                 <div className='seccionUno'>
                     <img className="detalle_imagen" src={product.pictureUrl} alt={product.title}/>
-
                 </div>
                 <div className="seccionDos">
                     <div className='detalle_descripcion'>
