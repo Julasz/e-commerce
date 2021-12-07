@@ -1,27 +1,23 @@
 $colorNav: #3AC9B9;
 
 .container1{   
-    margin: 1rem;
-    padding: 1rem;
     border-radius:20px;
     border-color:lightgray;
-
     .card{
-
-        .item-img {
-            width:200px;
+        display: contents;
+        width: 100%;
+        h3{
+            font-size: 1.5rem;
+            margin: 1rem 0;
         }
         .item-count{
-            
             color: $colorNav;
             background-color:white;
             border-style:none;
             padding:5px;
             margin-top: 1rem;
-            
             button{
                 text-decoration: none;
-                
                 padding: 1rem 0;
                 font-weight: bold;
                 font-size: 1.2rem;

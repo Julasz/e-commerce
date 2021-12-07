@@ -6,6 +6,7 @@ $colorPrincipal: rgb(103, 204, 170);
     grid-template-columns: repeat(3, 1fr);
     justify-items: center;
     align-items: center;
+    gap: 5rem;
     
     .container1{
         
@@ -25,6 +26,7 @@ $colorPrincipal: rgb(103, 204, 170);
             }
             .card_text{
                 font-weight: 300;
+                font-size: 1.2rem;
             }
             .item-count{
                 margin: 0 auto;
@@ -36,19 +38,19 @@ $colorPrincipal: rgb(103, 204, 170);
                 background-color: transparent;
     
                 h3{
-                    font-size: 1.2rem;
+                    font-size: 1.5rem;
                     padding: .5rem;
                     font-weight: 300;
-                    margin: 0 2rem;
+                    margin: 1rem 0;
                 }
                 button{
                     margin: .2rem;
-                    padding: .2rem .5rem;
+                    padding: 1rem;
                     border-radius: 3px;
                     background-color: $colorPrincipal;
                     border-color: $colorPrincipal;
                     color: white;
-                    font-size: 1.1rem;
+                    font-size: 1.3rem;
                     
                 }
             }

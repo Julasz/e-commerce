@@ -17,7 +17,7 @@ h2{
     .botonesContador{
         display: flex;
         justify-content: center;
-        padding: .5rem;
+        padding: 2rem 0;
         align-items: center;
 
         .btn-contador{
@@ -51,6 +51,7 @@ h2{
         }
         .btn-add-terminar{
             background-color: $colorNav;
+            font-weight: bold;
         }
         .btn-add-contador, .btn-add-terminar{
             color:white;
