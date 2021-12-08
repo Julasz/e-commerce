@@ -5,45 +5,6 @@ const CartFormulario = ({generarOrden}) => {
 
     const {handleForm, userData} = useCartContext()
 
-    //modal
-    //handleForm es clickCambio
-    // const [name, setName] = useState(false)
-    // const [phone, setPhone] = useState(false)
-    // const [email, setEmail] = useState(false)
-    // const [emailDos, setEmailDos] = useState(false)
-
-    // const nameRegex =/^[a-zA-Z]{3,16}$/
-    // const phoneRegex =/^[0-9]{11}$/
-    // const emailRegex =/^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]{2,30}[.][a-zA-Z]{2,4}$/
-
-    // const valorName = (nameValidar) => {
-    //     if (nameValidar) {
-    //         if (nameRegex.test(nameValidar)) {
-    //             setName(true)
-    //         }
-    //     }
-    // }
-    // const valorPhone = (phoneValidar) => {
-    //     if (phoneValidar) {
-    //         if (phoneRegex.test(phoneValidar)) {
-    //             setPhone(true)
-    //         }
-    //     }
-    // }
-    // const valorEmail = (emailValidar) => {
-    //     if (emailValidar) {
-    //         if (emailRegex.test(emailValidar)) {
-    //             setEmail(true)
-    //         }
-    //     }
-    // }
-    // const valorEmailDos = (emailDosValidar) => {
-    //     if (emailDosValidar) {
-    //         if (emailRegex.test(emailDosValidar)) {
-    //             setEmailDos(true)
-    //         }
-    //     }
-    // }
     return (
         <>
             <form onChange={handleForm}

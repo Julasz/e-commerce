@@ -2,6 +2,7 @@ import {useState} from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import {useCartContext} from '../../context/CartContext';
 import './itemDetail.scss'; 
+import Reveal from 'react-reveal/Reveal'
 
 const ItemDetail = ({product}) => {
     
@@ -14,6 +15,7 @@ const ItemDetail = ({product}) => {
     }
 
     return (
+        <Reveal effect='fadeInUp'>
             <div className="detalle_container">
                 <div className='seccionUno'>
                     <img className="detalle_imagen" src={product.pictureUrl} alt={product.title}/>
@@ -27,9 +29,10 @@ const ItemDetail = ({product}) => {
                 </div>
                 <div className='item_count'>
                     <ItemCount initial={cantidad} stock={product.stock} addCart={addCart}/>
-
                 </div>
             </div>
+        </Reveal>
+            
     )
 }
 

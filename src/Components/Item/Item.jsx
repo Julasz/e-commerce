@@ -3,7 +3,6 @@ import {Card} from 'react-bootstrap'
 import './item.scss'; 
 
 const Item = ({prod}) => {
-    
     return (
             <div className="container1" >
                 <section className="container1">

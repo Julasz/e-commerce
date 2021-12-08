@@ -4,7 +4,6 @@ import NavBar from './Components/navbar/NavBar';
 import ItemListContainer from './Components/ItemListContainter/ItemListContainer'
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';
 import Cart from './Components/cart/Cart';
-import Contacto from './Components/index/Contacto'
 import './App.css';
 import {Index} from './Components/index/Index'
 
@@ -19,7 +18,6 @@ function App() {
             <Route exact path="/categoria/:id" component={ItemListContainer}/>
             <Route exact path="/productos/:productId" component={ItemDetailContainer}/>
             <Route exact path="/cart" component={Cart}/>
-            <Route exact path="/contacto">{Contacto}</Route>
           </Switch>
         </BrowserRouter>
       </CartContextProvider>

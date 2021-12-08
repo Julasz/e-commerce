@@ -2,12 +2,12 @@ import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import {getFirestore} from '../../services/getFirestore';
 import ItemDetail from '../ItemDetail/ItemDetail';
+import Reveal from 'react-reveal/Reveal'
 
 const ItemDetailContainer = () => {
 
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
-
     const {productId} = useParams();
 
     useEffect(() => {
@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
 
     return (
             <div>
-                {loading ? <h2 className="loading">El detalle del producto se está cargando</h2> : <ItemDetail product={product}/> }
+                {loading ? <h2 className="loading">El detalle del producto se está cargando</h2> : <Reveal effect='fadeInUp'><ItemDetail product={product}/></Reveal> }
             </div>
     )
 }

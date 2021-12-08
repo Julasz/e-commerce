@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import {Link} from "react-router-dom";
 import './itemCount.scss';
+import Flash from 'react-reveal/Flash'
 
 const ItemCount = ({stock, initial, addCart}) =>{
 
@@ -25,7 +26,7 @@ const ItemCount = ({stock, initial, addCart}) =>{
             </div>
             <div className="botones">
 
-                {cambioBoton ? <Link to="/cart"><button className="btn-add-terminar">Terminar compra</button></Link>
+                {cambioBoton ? <Flash><Link to="/cart"><button className="btn-add-terminar">Terminar compra</button></Link></Flash>
                 : <button className="btn-add-contador" onClick={AgregarCarrito}>Agregar al carrito</button>
                 }
                 <Link to='/'><button className='btn-volver-contador'>Volver</button></Link>
